@@ -21,11 +21,9 @@ prowizja_procent = 0;
 var oplata_sadowa = 0;
 var oplaty_dod = 0;
 var suma = 0;
-//var ksiega=1;
 
 form = document.forms['kalkulator'];
 wartosc = form.elements['cenam'].value;
-//waluta = form.elements['Wartosc_currency'].options[form.elements['Wartosc_currency'].selectedIndex].value;
 waluta = form.elements['Wartosc_currency'].value;
 
 i = wartosc.length - 1;
@@ -117,12 +115,9 @@ if (prowizja_procent.charAt(i) == a.charAt(j))
 err = false;
 }
 if ((prowizja_procent.charAt(i) == ",") || (prowizja_procent.charAt(i) == ".")) {
-//form.elements['prowizjaprocent'].value = prowizja_procent.substring(0,i) + ".";
 err = false }
 if (err)
-//form.elements['prowizjaprocent'].value = prowizja_procent.substring(0,i);
 if ((wartosc.length == 1) && (wartosc == 0)) {
-//form.elements['prowizjaprocent'].value = prowizja_procent.substring(0,i);
 }
 
 prowizja_procent = parseFloat(prowizja_procent);
@@ -136,14 +131,11 @@ if (!isNaN(prowizja))
 form.elements['prowizja'].value = prowizja.toString(10);
 
 if (form.elements['oplata1'].checked && form.elements['ksiega'].checked==false) {
-//if (form.elements['oplata1'].checked && ksiega==0) {
 oplata_sadowa = 0;
 
 form.elements['oplatasadowa'].value = "nie ma";
-//form.elements['oplatasadowa'].value = oplata_sadowa;
 }
 else if (form.elements['oplata2'].checked || form.elements['ksiega'].checked==true) {
-//else if (form.elements['oplata2'].checked || ksiega==1) {
 	if ((cenam > 0) && (cenam <= 10000))
 	oplata_sadowa = cenam * 0.08;
 	if ((cenam > 10000) && (cenam <= 50000))
@@ -174,7 +166,6 @@ document.kalkulator.wypis_aktu.readOnly=false;
 document.kalkulator.wypis_aktu.readOnly=true;
 }
 
-//if (prowizja>0 && prowizja<=500) prowizja=500;
 if (!isNaN(prowizja))
 form.elements['prowizjaagencji'].value = prowizja.toString(10);
 else
@@ -202,8 +193,6 @@ wnioskesad=246;
 	form.elements['wniosek'].value = "";
 }
 
-//oplaty_dod = taksa_notarialna + oplata_skarbowa + VAT_od_taksy + oplata_sadowa + prowizja;
-//alert (taksa_notarialna + ' ' +oplata_skarbowa +  ' ' +VAT_od_taksy + ' ' +oplata_sadowa + ' ' +prowizja+' ' +wypisy+' ' +vatagencja+ ' ' +wnioskesad);
 oplaty_dod = taksa_notarialna + oplata_skarbowa +  VAT_od_taksy + oplata_sadowa + prowizja+wypisy+wnioskesad;
 oplaty_dod = (Math.round(oplaty_dod * 100))/100;
 if (!isNaN(oplaty_dod))
