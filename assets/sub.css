@@ -62,3 +62,6 @@ footer{border-top:1px solid var(--line);padding:22px var(--gut);display:flex;jus
 .prop-h{display:block}.prop-p{margin-top:10px}.g-main img{height:60vw}.g-t{width:84px;height:60px}.form-2{grid-template-columns:1fr}.side{padding:18px}}
 @media (max-width:520px){.pgrid,.bgrid{grid-template-columns:1fr}.contact{grid-template-columns:1fr}}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
+
+.certs{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:16px;margin-top:20px}.certs img{width:100%;height:auto;border-radius:6px;border:1px solid var(--line)}
+.intro{max-width:760px;margin-top:18px}.intro p+p{margin-top:12px}.faq h2{margin-top:32px}.faq h2:first-child{margin-top:0}
